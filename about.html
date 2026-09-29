@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>About — Crownfold</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        /* =========================================
+           CROWNFOLD — ABOUT PAGE
+        ========================================= */
+
+        .about-page {
+            background: #0b0b0a;
+            color: #eee9df;
+        }
+
+        /* HERO */
+
+        .about-hero {
+            position: relative;
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            overflow: hidden;
+            background:
+                linear-gradient(rgba(0,0,0,0.38), rgba(0,0,0,0.48)),
+                url("product/CF-005.png") center center / cover no-repeat;
+        }
+
+        .about-hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 850px;
+            padding: 80px 25px;
+        }
+
+        .about-eyebrow {
+            margin: 0 0 18px;
+            color: #d4af37;
+            font-size: 9px;
+            font-weight: 600;
+            letter-spacing: 4px;
+        }
+
+        .about-hero h1 {
+            margin: 0;
+            font-family: "Cormorant Garamond", Georgia, serif;
+            font-size: clamp(55px, 8vw, 105px);
+            line-height: 0.9;
+            font-weight: 500;
+            letter-spacing: -2px;
+        }
+
+        .about-hero p {
+            max-width: 600px;
+            margin: 28px auto 0;
+            color: #ddd8cf;
+            font-size: 12px;
+            line-height: 1.9;
+            letter-spacing: 0.4px;
+        }
+
+        /* STORY */
+
+        .about-story {
+            max-width: 1250px;
+            margin: 0 auto;
+            padding: 120px 6%;
+            display: grid;
+            grid-template-columns: 0.8fr 1.2fr;
+            gap: 100px;
+            align-items: center;
+            box-sizing: border-box;
+        }
+
+        .about-small-title {
+            margin: 0 0 15px;
+            color: #d4af37;
+            font-size: 9px;
+            font-weight: 600;
+            letter-spacing: 3px;
+        }
+
+        .about-story-left h2 {
+            margin: 0;
+            font-family: "Cormorant Garamond", Georgia, serif;
+            font-size: clamp(42px, 5vw, 68px);
+            line-height: 0.95;
+            font-weight: 500;
+        }
+
+        .about-story-right p {
+            margin: 0 0 22px;
+            color: #99958d;
+            font-size: 12px;
+            line-height: 2;
+            letter-spacing: 0.2px;
+        }
+
+        .about-story-right p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* VALUES */
+
+        .about-values {
+            border-top: 1px solid rgba(255,255,255,0.07);
+            border-bottom: 1px solid rgba(255,255,255,0.07);
+            padding: 100px 6%;
+        }
+
+        .about-values-heading {
+            max-width: 1250px;
+            margin: 0 auto 55px;
+            text-align: center;
+        }
+
+        .about-values-heading h2 {
+            margin: 8px 0 0;
+            font-family: "Cormorant Garamond", Georgia, serif;
+            font-size: clamp(42px, 5vw, 62px);
+            font-weight: 500;
+        }
+
+        .about-values-grid {
+            max-width: 1250px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .about-value-card {
+            padding: 35px 30px;
+            border: 1px solid rgba(255,255,255,0.07);
+            background: #11110f;
+        }
+
+        .about-value-number {
+            display: block;
+            margin-bottom: 30px;
+            color: #d4af37;
+            font-size: 9px;
+            letter-spacing: 2px;
+        }
+
+        .about-value-card h3 {
+            margin: 0 0 14px;
+            font-family: "Cormorant Garamond", Georgia, serif;
+            font-size: 28px;
+            font-weight: 500;
+        }
+
+        .about-value-card p {
+            margin: 0;
+            color: #88847c;
+            font-size: 11px;
+            line-height: 1.9;
+        }
+
+        /* CLOSING */
+
+        .about-closing {
+            padding: 120px 25px;
+            text-align: center;
+        }
+
+        .about-closing h2 {
+            max-width: 850px;
+            margin: 0 auto;
+            font-family: "Cormorant Garamond", Georgia, serif;
+            font-size: clamp(45px, 6vw, 78px);
+            line-height: 0.95;
+            font-weight: 500;
+        }
+
+        .about-closing p {
+            max-width: 550px;
+            margin: 25px auto 0;
+            color: #88847c;
+            font-size: 11px;
+            line-height: 1.9;
+        }
+
+        .about-shop-button {
+            display: inline-block;
+            margin-top: 35px;
+            padding: 16px 30px;
+            border: 1px solid #d4af37;
+            color: #d4af37;
+            text-decoration: none;
+            font-size: 9px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            transition: 0.3s ease;
+        }
+
+        .about-shop-button:hover {
+            background: #d4af37;
+            color: #080808;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 900px) {
+
+            .about-story {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                padding: 85px 6%;
+            }
+
+            .about-values {
+                padding: 80px 6%;
+            }
+
+            .about-values-grid {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+        @media (max-width: 600px) {
+
+            .about-hero {
+                min-height: 65vh;
+            }
+
+            .about-hero-content {
+                padding: 60px 20px;
+            }
+
+            .about-story {
+                padding: 70px 20px;
+            }
+
+            .about-values {
+                padding: 70px 20px;
+            }
+
+            .about-closing {
+                padding: 80px 20px;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- TOP BAR -->
+
+    <div class="top-bar">
+        <p>FREE SHIPPING ON ORDERS ABOVE ₹999</p>
+    </div>
+
+
+    <!-- HEADER -->
+
+    <header class="main-header">
+
+        <div class="header-left">
+            <button class="menu-btn" type="button" aria-label="Open Menu">
+                ☰
+            </button>
+        </div>
+
+        <a href="index.html" class="logo">
+            <img src="../logo.png" alt="Crownfold Logo">
+        </a>
+
+        <nav class="main-nav">
+            <a href="index.html">HOME</a>
+            <a href="shop.html">NEW IN</a>
+            <a href="shop.html">SHIRTS</a>
+            <a href="shop.html">COLLECTION</a>
+        </nav>
+
+        <div class="header-actions">
+            <button class="search-btn" type="button">SEARCH</button>
+
+            <a href="#" class="account-btn">
+                ACCOUNT
+            </a>
+
+            <a href="cart.html" class="cart-btn">
+                CART <span id="cartCount">0</span>
+            </a>
+        </div>
+
+    </header>
+
+
+    <!-- ABOUT PAGE -->
+
+    <main class="about-page">
+
+        <!-- HERO -->
+
+        <section class="about-hero">
+
+            <div class="about-hero-content">
+
+                <p class="about-eyebrow">
+                    THE CROWNFOLD STORY
+                </p>
+
+                <h1>
+                    Made For<br>
+                    Your Everyday.
+                </h1>
+
+                <p>
+                    Crownfold is a modern menswear label built around
+                    timeless shirts, clean silhouettes and effortless
+                    everyday style.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- STORY -->
+
+        <section class="about-story">
+
+            <div class="about-story-left">
+
+                <p class="about-small-title">
+                    OUR PHILOSOPHY
+                </p>
+
+                <h2>
+                    Simple.<br>
+                    Refined.<br>
+                    Timeless.
+                </h2>
+
+            </div>
+
+
+            <div class="about-story-right">
+
+                <p>
+                    At Crownfold, we believe great style does not need
+                    to be complicated.
+                </p>
+
+                <p>
+                    Our approach is focused on creating versatile
+                    shirts that can move with you — from everyday
+                    moments to occasions that matter.
+                </p>
+
+                <p>
+                    Every piece in the Crownfold Essentials collection
+                    is designed with a clean aesthetic, comfortable
+                    fit and attention to the details that make a shirt
+                    feel different.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- VALUES -->
+
+        <section class="about-values">
+
+            <div class="about-values-heading">
+
+                <p class="about-small-title">
+                    WHAT WE STAND FOR
+                </p>
+
+                <h2>
+                    The Crownfold Standard
+                </h2>
+
+            </div>
+
+
+            <div class="about-values-grid">
+
+                <article class="about-value-card">
+
+                    <span class="about-value-number">
+                        01
+                    </span>
+
+                    <h3>
+                        Everyday Design
+                    </h3>
+
+                    <p>
+                        Clean silhouettes and versatile colours
+                        designed to become part of your everyday
+                        wardrobe.
+                    </p>
+
+                </article>
+
+
+                <article class="about-value-card">
+
+                    <span class="about-value-number">
+                        02
+                    </span>
+
+                    <h3>
+                        Quiet Detail
+                    </h3>
+
+                    <p>
+                        We believe premium style lives in the details —
+                        from the fabric to the finish and overall fit.
+                    </p>
+
+                </article>
+
+
+                <article class="about-value-card">
+
+                    <span class="about-value-number">
+                        03
+                    </span>
+
+                    <h3>
+                        Built To Last
+                    </h3>
+
+                    <p>
+                        Our goal is to create pieces that remain
+                        relevant beyond a single season or trend.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- CLOSING -->
+
+        <section class="about-closing">
+
+            <h2>
+                Your wardrobe.<br>
+                Your everyday.
+            </h2>
+
+            <p>
+                Discover the Crownfold Essentials collection.
+            </p>
+
+            <a href="shop.html" class="about-shop-button">
+                EXPLORE COLLECTION
+            </a>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer class="site-footer">
+
+        <div class="footer-main">
+
+            <div class="footer-brand">
+                <h2>CROWNFOLD</h2>
+                <p>
+                    Modern menswear for everyday living.
+                </p>
+            </div>
+
+            <div class="footer-links">
+
+                <div>
+                    <h4>SHOP</h4>
+                    <a href="shop.html">NEW IN</a>
+                    <a href="shop.html">SHIRTS</a>
+                    <a href="shop.html">COLLECTION</a>
+                </div>
+
+                <div>
+                    <h4>COMPANY</h4>
+                    <a href="about.html">ABOUT</a>
+                    <a href="contact.html">CONTACT</a>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <span>© 2026 CROWNFOLD</span>
+            <span>THE ESSENTIALS COLLECTION</span>
+        </div>
+
+    </footer>
+
+
+    <!-- MOBILE MENU -->
+
+    <div class="mobile-menu" id="mobileMenu">
+
+        <div class="mobile-menu-top">
+
+            <span>CROWNFOLD</span>
+
+            <button
+                class="mobile-menu-close"
+                id="mobileMenuClose"
+                type="button"
+                aria-label="Close Menu">
+                ×
+            </button>
+
+        </div>
+
+        <nav class="mobile-menu-links">
+
+            <a href="index.html">HOME</a>
+            <a href="shop.html">NEW IN</a>
+            <a href="shop.html">SHIRTS</a>
+            <a href="shop.html">COLLECTION</a>
+            <a href="about.html">ABOUT</a>
+            <a href="contact.html">CONTACT</a>
+            <a href="#">ACCOUNT</a>
+
+            <a href="cart.html">
+                CART
+                <span id="mobileCartCount">0</span>
+            </a>
+
+        </nav>
+
+    </div>
+
+
+    <script>
+
+        /* MOBILE MENU */
+
+        const menuBtn =
+            document.querySelector(".menu-btn");
+
+        const mobileMenu =
+            document.getElementById("mobileMenu");
+
+        const mobileMenuClose =
+            document.getElementById("mobileMenuClose");
+
+
+        if (menuBtn && mobileMenu) {
+
+            menuBtn.addEventListener("click", () => {
+
+                mobileMenu.classList.add("active");
+
+            });
+
+        }
+
+
+        if (mobileMenuClose && mobileMenu) {
+
+            mobileMenuClose.addEventListener("click", () => {
+
+                mobileMenu.classList.remove("active");
+
+            });
+
+        }
+
+
+        document
+            .querySelectorAll(".mobile-menu-links a")
+            .forEach(link => {
+
+                link.addEventListener("click", () => {
+
+                    mobileMenu.classList.remove("active");
+
+                });
+
+            });
+
+
+        /* CART COUNT */
+
+        function updateCartCount() {
+
+            const cart =
+                JSON.parse(
+                    localStorage.getItem("crownfoldCart")
+                ) || [];
+
+            const totalQuantity =
+                cart.reduce(
+                    (total, item) =>
+                        total + Number(item.quantity || 0),
+                    0
+                );
+
+
+            const cartCount =
+                document.getElementById("cartCount");
+
+            const mobileCartCount =
+                document.getElementById("mobileCartCount");
+
+
+            if (cartCount) {
+                cartCount.textContent = totalQuantity;
+            }
+
+            if (mobileCartCount) {
+                mobileCartCount.textContent = totalQuantity;
+            }
+
+        }
+
+
+        updateCartCount();
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cart | Crownfold</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+
+    <div class="top-bar">
+    <p>FREE SHIPPING ON ORDERS ABOVE ₹999</p>
+</div>
+
+<header class="main-header">
+
+    <div class="header-left">
+        <button class="menu-btn" type="button">☰</button>
+    </div>
+
+    <a href="index.html" class="logo">
+        <img src="../logo.png" alt="Crownfold Logo">
+    </a>
+
+    <nav class="main-nav">
+        <a href="index.html">HOME</a>
+        <a href="shop.html">NEW IN</a>
+        <a href="shop.html">SHIRTS</a>
+        <a href="shop.html">COLLECTION</a>
+    </nav>
+
+    <div class="header-actions">
+        <button class="search-btn" type="button">SEARCH</button>
+        <a href="login.html" class="account-btn">
+
+        <a href="cart.html" class="cart-btn">
+            CART <span id="cartCount">0</span>
+        </a>
+    </div>
+
+</header>
+
+    <!-- CART -->
+
+    <main class="cart-page">
+
+        <div class="cart-heading">
+
+            <p class="small-title">
+                CROWNFOLD
+            </p>
+
+            <h1>Your Cart</h1>
+
+        </div>
+
+
+        <div id="cartContainer">
+
+            <!-- Cart items will appear here -->
+
+        </div>
+
+
+        <div class="cart-summary">
+
+            <div class="summary-row">
+                <span>Subtotal</span>
+                <strong id="cartTotal">₹0</strong>
+            </div>
+
+            <button id="checkoutBtn" class="add-cart-btn">
+                PROCEED TO CHECKOUT
+            </button>
+
+        </div>
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>
+            © 2026 CROWNFOLD. ALL RIGHTS RESERVED.
+        </p>
+
+    </footer>
+
+
+    <script src="js/cart.js"></script>
+
+</body>
+
+</html>

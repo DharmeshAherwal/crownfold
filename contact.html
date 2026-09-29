@@ -1,0 +1,1056 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Contact — Crownfold</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        /* =========================================
+           CROWNFOLD — CONTACT PAGE
+        ========================================= */
+
+        .contact-page {
+            background: #0b0b0a;
+            color: #eee9df;
+        }
+
+        .contact-hero {
+            max-width: 1250px;
+            margin: 0 auto;
+            padding: 110px 6% 80px;
+            box-sizing: border-box;
+        }
+
+        .contact-eyebrow {
+            margin: 0 0 18px;
+            color: #d4af37;
+            font-size: 9px;
+            font-weight: 600;
+            letter-spacing: 4px;
+        }
+
+        .contact-hero h1 {
+            max-width: 850px;
+            margin: 0;
+            font-family: "Cormorant Garamond", Georgia, serif;
+            font-size: clamp(55px, 8vw, 105px);
+            line-height: .9;
+            font-weight: 500;
+            letter-spacing: -2px;
+        }
+
+        .contact-hero p {
+            max-width: 560px;
+            margin: 30px 0 0;
+            color: #99958d;
+            font-size: 12px;
+            line-height: 1.9;
+        }
+
+        /* CONTACT CONTENT */
+
+        .contact-content {
+            max-width: 1250px;
+            margin: 0 auto;
+            padding: 20px 6% 120px;
+            display: grid;
+            grid-template-columns: .8fr 1.2fr;
+            gap: 90px;
+            box-sizing: border-box;
+        }
+
+        /* INFO */
+
+        .contact-info {
+            border-top: 1px solid rgba(255,255,255,.08);
+        }
+
+        .contact-info-block {
+            padding: 25px 0;
+            border-bottom: 1px solid rgba(255,255,255,.08);
+        }
+
+        .contact-info-block span {
+            display: block;
+            margin-bottom: 10px;
+            color: #d4af37;
+            font-size: 8px;
+            font-weight: 600;
+            letter-spacing: 2px;
+        }
+
+        .contact-info-block h3 {
+            margin: 0;
+            color: #eee9df;
+            font-family: "Cormorant Garamond", Georgia, serif;
+            font-size: 25px;
+            font-weight: 500;
+        }
+
+        .contact-info-block p {
+            margin: 8px 0 0;
+            color: #88847c;
+            font-size: 10px;
+            line-height: 1.8;
+        }
+
+        /* FORM */
+
+        .contact-form {
+            padding: 35px;
+            background: #11110f;
+            border: 1px solid rgba(255,255,255,.07);
+        }
+
+        .contact-form-heading {
+            margin-bottom: 35px;
+        }
+
+        .contact-form-heading span {
+            color: #d4af37;
+            font-size: 8px;
+            letter-spacing: 2px;
+        }
+
+        .contact-form-heading h2 {
+            margin: 8px 0 0;
+            font-family: "Cormorant Garamond", Georgia, serif;
+            font-size: 42px;
+            font-weight: 500;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+        }
+
+        .form-group {
+            margin-bottom: 22px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 9px;
+            color: #aaa59d;
+            font-size: 8px;
+            font-weight: 600;
+            letter-spacing: 1.8px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 15px 0;
+            border: none;
+            border-bottom: 1px solid #35332f;
+            outline: none;
+            background: transparent;
+            color: #eee9df;
+            font-family: inherit;
+            font-size: 11px;
+            transition: .25s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-bottom-color: #d4af37;
+        }
+
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .contact-submit {
+            width: 100%;
+            margin-top: 10px;
+            padding: 17px 20px;
+            border: 1px solid #d4af37;
+            background: #d4af37;
+            color: #080808;
+            font-size: 9px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            cursor: pointer;
+            transition: .3s ease;
+        }
+
+        .contact-submit:hover {
+            background: transparent;
+            color: #d4af37;
+        }
+
+        /* FAQ */
+
+        .contact-note {
+            max-width: 1250px;
+            margin: 0 auto;
+            padding: 0 6% 110px;
+            box-sizing: border-box;
+        }
+
+        .contact-note-inner {
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,.07);
+            text-align: center;
+        }
+
+        .contact-note-inner p {
+            margin: 0;
+            color: #77736c;
+            font-size: 10px;
+            line-height: 1.8;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 900px) {
+
+            .contact-content {
+                grid-template-columns: 1fr;
+                gap: 55px;
+            }
+
+        }
+
+        @media (max-width: 600px) {
+
+            .contact-hero {
+                padding: 75px 20px 55px;
+            }
+
+            .contact-content {
+                padding: 10px 20px 80px;
+            }
+
+            .contact-form {
+                padding: 25px 20px;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+                gap: 0;
+            }
+
+            .contact-form-heading h2 {
+                font-size: 36px;
+            }
+
+            .contact-note {
+                padding: 0 20px 70px;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- TOP BAR -->
+
+    <div class="top-bar">
+        <p>FREE SHIPPING ON ORDERS ABOVE ₹999</p>
+    </div>
+
+
+    <!-- HEADER -->
+
+    <header class="main-header">
+
+        <div class="header-left">
+            <button
+                class="menu-btn"
+                type="button"
+                aria-label="Open Menu">
+                ☰
+            </button>
+        </div>
+
+        <a href="index.html" class="logo">
+            <img src="../logo.png" alt="Crownfold Logo">
+        </a>
+
+        <nav class="main-nav">
+            <a href="index.html">HOME</a>
+            <a href="shop.html">NEW IN</a>
+            <a href="shop.html">SHIRTS</a>
+            <a href="shop.html">COLLECTION</a>
+        </nav>
+
+        <div class="header-actions">
+
+            <button
+                class="search-btn"
+                type="button">
+                SEARCH
+            </button>
+
+            <a href="login.html" class="account-btn">
+
+                ACCOUNT
+            </a>
+
+            <a href="cart.html" class="cart-btn">
+                CART <span id="cartCount">0</span>
+            </a>
+
+        </div>
+
+    </header>
+
+
+    <!-- CONTACT -->
+
+    <main class="contact-page">
+
+        <!-- HERO -->
+
+        <section class="contact-hero">
+
+            <p class="contact-eyebrow">
+                GET IN TOUCH
+            </p>
+
+            <h1>
+                We'd Love<br>
+                To Hear From You.
+            </h1>
+
+            <p>
+                Questions about a product, your order, or Crownfold?
+                Send us a message and we'll get back to you.
+            </p>
+
+        </section>
+
+
+        <!-- CONTENT -->
+
+        <section class="contact-content">
+
+            <!-- INFORMATION -->
+
+            <div class="contact-info">
+
+                <div class="contact-info-block">
+
+                    <span>
+                        CUSTOMER SUPPORT
+                    </span>
+
+                    <h3>
+                        We're Here To Help.
+                    </h3>
+
+                    <p>
+                        For product, order or shopping questions,
+                        use the contact form and we'll get back to you.
+                    </p>
+
+                </div>
+
+
+                <div class="contact-info-block">
+
+                    <span>
+                        EMAIL
+                    </span>
+
+                    <h3>
+                        hello@crownfold.in
+                    </h3>
+
+                    <p>
+                        We aim to respond as soon as possible.
+                    </p>
+
+                </div>
+
+
+                <div class="contact-info-block">
+
+                    <span>
+                        BUSINESS
+                    </span>
+
+                    <h3>
+                        Crownfold
+                    </h3>
+
+                    <p>
+                        Modern menswear for everyday living.
+                    </p>
+
+                </div>
+
+
+                <div class="contact-info-block">
+
+                    <span>
+                        HOURS
+                    </span>
+
+                    <h3>
+                        MON — SAT
+                    </h3>
+
+                    <p>
+                        10:00 AM — 7:00 PM
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- FORM -->
+
+            <form id="contactForm" onsubmit="return sendDealerEnquiry(event)">
+
+    <input
+        type="hidden"
+        id="enquiryType"
+        value="general">
+
+    <div class="form-row">
+
+        <div class="form-group">
+            <label for="contactName">NAME</label>
+            <input
+                type="text"
+                id="contactName"
+                placeholder="Your name"
+                required>
+        </div>
+
+        <div class="form-group">
+            <label for="contactEmail">EMAIL</label>
+            <input
+                type="email"
+                id="contactEmail"
+                placeholder="Your email"
+                required>
+        </div>
+
+    </div>
+
+  
+
+
+    <!-- DEALER FIELDS -->
+
+    <div id="dealerFields" style="display:none;">
+
+        <div class="form-row">
+
+            <div class="form-group">
+                <label for="shopName">SHOP / BUSINESS NAME</label>
+                <input
+                    type="text"
+                    id="shopName"
+                    placeholder="Your shop or business name">
+            </div>
+
+            <div class="form-group">
+                <label for="dealerMobile">MOBILE / WHATSAPP</label>
+                <input
+                    type="tel"
+                    id="dealerMobile"
+                    placeholder="Your WhatsApp number">
+            </div>
+
+        </div>
+
+        <div class="form-group">
+            <label for="dealerCity">CITY</label>
+            <input
+                type="text"
+                id="dealerCity"
+                placeholder="Your city">
+        </div>
+
+        <div class="form-group">
+            <label for="dealerProduct">INTERESTED PRODUCT</label>
+            <input
+                type="text"
+                id="dealerProduct"
+                placeholder="Example: CF-007 Rose Geometry Shirt">
+        </div>
+
+<div class="form-group">
+    <label for="dealerQuantity">REQUIRED QUANTITY</label>
+    <input
+    type="number"
+    id="dealerQuantity"
+    min="1"
+    placeholder="Example: 20 pieces">
+</div>
+
+    </div>
+
+
+    <!-- GENERAL SUBJECT -->
+
+    <div class="form-group">
+        <label for="contactSubject">SUBJECT</label>
+        <input
+            type="text"
+            id="contactSubject"
+            placeholder="What is this about?"
+            required>
+    </div>
+
+
+    <!-- MESSAGE -->
+
+    <div class="form-group">
+        <label for="contactMessage">MESSAGE</label>
+        <textarea
+            id="contactMessage"
+            placeholder="Write your message..."
+            required></textarea>
+    </div>
+
+
+    <button
+        type="submit"
+        class="contact-submit">
+        SEND MESSAGE
+    </button>
+
+<div class="contact-whatsapp-option">
+
+    <span>NEED A QUICK RESPONSE?</span>
+
+    <p>Chat directly with Crownfold on WhatsApp.</p>
+
+    <a
+        href="https://wa.me/919023265440"
+        target="_blank"
+        rel="noopener"
+        class="contact-whatsapp-btn">
+        CHAT ON WHATSAPP
+    </a>
+
+</div>
+
+
+</form>
+
+            </div>
+
+        </section>
+
+
+        <!-- NOTE -->
+
+        <section class="contact-note">
+
+            <div class="contact-note-inner">
+
+                <p>
+                    For order-related questions, please include your
+                    order details in your message.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer class="site-footer">
+
+        <div class="footer-main">
+
+            <div class="footer-brand">
+
+                <h2>CROWNFOLD</h2>
+
+                <p>
+                    Modern menswear for everyday living.
+                </p>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <div>
+
+                    <h4>SHOP</h4>
+
+                    <a href="shop.html">NEW IN</a>
+                    <a href="shop.html">SHIRTS</a>
+                    <a href="shop.html">COLLECTION</a>
+
+                </div>
+
+
+                <div>
+
+                    <h4>COMPANY</h4>
+
+                    <a href="about.html">ABOUT</a>
+                    <a href="contact.html">CONTACT</a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <span>
+                © 2026 CROWNFOLD
+            </span>
+
+            <span>
+                THE ESSENTIALS COLLECTION
+            </span>
+
+        </div>
+
+    </footer>
+
+
+    <!-- MOBILE MENU -->
+
+    <div class="mobile-menu" id="mobileMenu">
+
+        <div class="mobile-menu-top">
+
+            <span>CROWNFOLD</span>
+
+            <button
+                class="mobile-menu-close"
+                id="mobileMenuClose"
+                type="button">
+                ×
+            </button>
+
+        </div>
+
+
+        <nav class="mobile-menu-links">
+
+            <a href="index.html">HOME</a>
+            <a href="shop.html">NEW IN</a>
+            <a href="shop.html">SHIRTS</a>
+            <a href="shop.html">COLLECTION</a>
+            <a href="about.html">ABOUT</a>
+            <a href="contact.html">CONTACT</a>
+            <a href="login.html" class="account-btn">
+ACCOUNT</a>
+
+            <a href="cart.html">
+                CART
+                <span id="mobileCartCount">0</span>
+            </a>
+
+        </nav>
+
+    </div>
+
+
+<!-- SCRIPT -->
+
+<script>
+
+/* MOBILE MENU */
+
+const menuBtn =
+    document.querySelector(".menu-btn");
+
+const mobileMenu =
+    document.getElementById("mobileMenu");
+
+const mobileMenuClose =
+    document.getElementById("mobileMenuClose");
+
+
+if (menuBtn && mobileMenu) {
+
+    menuBtn.addEventListener("click", () => {
+        mobileMenu.classList.add("active");
+    });
+
+}
+
+
+if (mobileMenuClose && mobileMenu) {
+
+    mobileMenuClose.addEventListener("click", () => {
+        mobileMenu.classList.remove("active");
+    });
+
+}
+
+
+document
+    .querySelectorAll(".mobile-menu-links a")
+    .forEach(link => {
+
+        link.addEventListener("click", () => {
+            mobileMenu.classList.remove("active");
+        });
+
+    });
+
+
+/* CART COUNT */
+
+function updateCartCount() {
+
+    const cart =
+        JSON.parse(
+            localStorage.getItem("crownfoldCart")
+        ) || [];
+
+
+    const totalQuantity =
+        cart.reduce(
+            (total, item) =>
+                total + Number(item.quantity || 0),
+            0
+        );
+
+
+    const cartCount =
+        document.getElementById("cartCount");
+
+    const mobileCartCount =
+        document.getElementById("mobileCartCount");
+
+
+    if (cartCount) {
+        cartCount.textContent =
+            totalQuantity;
+    }
+
+    if (mobileCartCount) {
+        mobileCartCount.textContent =
+            totalQuantity;
+    }
+
+}
+
+
+updateCartCount();
+
+
+/* DEALER ENQUIRY */
+
+const enquiryType =
+    document.getElementById("enquiryType");
+
+const dealerFields =
+    document.getElementById("dealerFields");
+
+const contactFormHeading =
+    document.querySelector(".contact-form-heading h2");
+
+const contactFormEyebrow =
+    document.querySelector(".contact-form-heading span");
+
+
+const urlParams =
+    new URLSearchParams(window.location.search);
+
+const enquiry =
+    urlParams.get("enquiry");
+
+
+if (enquiry === "dealer") {
+
+    if (enquiryType) {
+        enquiryType.value = "dealer";
+    }
+
+
+    if (dealerFields) {
+        dealerFields.style.display = "block";
+
+        const dealerProductInput =
+    document.getElementById("dealerProduct");
+
+const productIdFromURL =
+    urlParams.get("product");
+
+const productNames = {
+    "CF-007": "Rose Geometry Shirt",
+    "CF-008": "Blue Abstract Shirt",
+    "CF-009": "Olive Geometry Shirt",
+    "CF-010": "Sky Geometry Shirt",
+    "CF-011": "Sand Heritage Kurta",
+    "CF-012": "Indigo Heritage Kurta",
+    "CF-013": "Emerald Heritage Kurta"
+};
+
+if (dealerProductInput && productIdFromURL) {
+    dealerProductInput.value =
+        productIdFromURL +
+        " — " +
+        (productNames[productIdFromURL] || "Crownfold Product");
+}
+    }
+
+
+    if (contactFormEyebrow) {
+        contactFormEyebrow.textContent =
+            "DEALER ENQUIRY";
+    }
+
+
+    if (contactFormHeading) {
+        contactFormHeading.textContent =
+            "Partner With Crownfold";
+    }
+
+}
+
+
+<script>
+const contactForm = document.getElementById("contactForm");
+
+if (contactForm) {
+
+    contactForm.addEventListener("submit", function(event) {
+
+        event.preventDefault();
+
+        const name =
+            document.getElementById("contactName")?.value.trim() || "";
+
+        const email =
+            document.getElementById("contactEmail")?.value.trim() || "";
+
+        const shopName =
+            document.getElementById("shopName")?.value.trim() || "";
+
+        const dealerMobile =
+            document.getElementById("dealerMobile")?.value.trim() || "";
+
+        const dealerCity =
+            document.getElementById("dealerCity")?.value.trim() || "";
+
+        const dealerProduct =
+            document.getElementById("dealerProduct")?.value.trim() || "";
+
+        const message =
+            document.getElementById("contactMessage")?.value.trim() || "";
+
+          const dealerQuantity =
+    document.getElementById("dealerQuantity")?.value.trim() || "";
+
+        const enquiryType =
+            document.getElementById("enquiryType")?.value || "general";
+
+        if (enquiryType === "dealer") {
+
+            const whatsappMessage =
+                "👑 CROWNFOLD DEALER ENQUIRY\n\n" +
+                 "Product: " + dealerProduct + "\n" +
+"Required Quantity: " + dealerQuantity + " pieces\n\n" +
+                "DEALER DETAILS\n" +
+                "Name: " + name + "\n" +
+                "Shop: " + shopName + "\n" +
+                "Mobile: " + dealerMobile + "\n" +
+                "City: " + dealerCity + "\n\n" +
+                "MESSAGE\n" +
+                message;
+
+            const whatsappURL =
+                "https://wa.me/919023265440?text=" +
+                encodeURIComponent(whatsappMessage);
+
+            window.open(whatsappURL, "_blank");
+
+        } else {
+
+            alert(
+                "Thank you, " +
+                name +
+                "! Your message has been received."
+            );
+
+        }
+
+    });
+
+}
+</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const params = new URLSearchParams(window.location.search);
+
+    const enquiry = params.get("enquiry");
+    const productId = params.get("product");
+
+    if (enquiry !== "dealer") {
+        return;
+    }
+
+    /* DEALER MODE */
+
+    const enquiryType =
+        document.getElementById("enquiryType");
+
+    const dealerFields =
+        document.getElementById("dealerFields");
+
+    const heading =
+        document.querySelector(".contact-form-heading h2");
+
+    const eyebrow =
+        document.querySelector(".contact-form-heading span");
+
+    const dealerProduct =
+        document.getElementById("dealerProduct");
+
+
+    /* SET DEALER TYPE */
+
+    if (enquiryType) {
+        enquiryType.value = "dealer";
+    }
+
+
+    /* SHOW DEALER FIELDS */
+
+    if (dealerFields) {
+        dealerFields.style.display = "block";
+    }
+
+
+    /* CHANGE HEADING */
+
+    if (eyebrow) {
+        eyebrow.textContent = "DEALER ENQUIRY";
+    }
+
+    if (heading) {
+        heading.textContent = "Partner With Crownfold";
+    }
+
+
+    /* PRODUCT NAME */
+
+    const productNames = {
+
+        "CF-007": "Rose Geometry Shirt",
+        "CF-008": "Blue Abstract Shirt",
+        "CF-009": "Olive Geometry Shirt",
+        "CF-010": "Sky Geometry Shirt",
+        "CF-011": "Sand Heritage Kurta",
+        "CF-012": "Indigo Heritage Kurta",
+        "CF-013": "Emerald Heritage Kurta"
+
+    };
+
+
+    if (dealerProduct && productId) {
+
+        const productName =
+            productNames[productId] || "Crownfold Product";
+
+        dealerProduct.value =
+            productId + " — " + productName;
+
+    }
+
+});
+</script>
+
+<script>
+
+function sendDealerEnquiry(event) {
+
+    event.preventDefault();
+
+    const params =
+        new URLSearchParams(window.location.search);
+
+    const enquiry =
+        params.get("enquiry");
+
+    const name =
+        document.getElementById("contactName")?.value.trim() || "";
+
+    const email =
+        document.getElementById("contactEmail")?.value.trim() || "";
+
+    const shopName =
+        document.getElementById("shopName")?.value.trim() || "";
+
+    const dealerMobile =
+        document.getElementById("dealerMobile")?.value.trim() || "";
+
+    const dealerCity =
+        document.getElementById("dealerCity")?.value.trim() || "";
+
+    const dealerProduct =
+        document.getElementById("dealerProduct")?.value.trim() || "";
+
+     const dealerQuantity =
+    document.getElementById("dealerQuantity")?.value.trim() || "";
+
+    const message =
+        document.getElementById("contactMessage")?.value.trim() || "";
+
+
+    if (enquiry === "dealer") {
+
+        const whatsappMessage =
+            "👑 CROWNFOLD DEALER ENQUIRY\n\n" +
+            "Product: " + dealerProduct + "\n\n" +
+            "Required Quantity: " + dealerQuantity + " pieces\n\n" +
+
+            "DEALER DETAILS\n" +
+            "Name: " + name + "\n" +
+            "Shop: " + shopName + "\n" +
+            "Mobile: " + dealerMobile + "\n" +
+            "City: " + dealerCity + "\n\n" +
+            "MESSAGE\n" +
+            message;
+
+
+        const whatsappURL =
+            "https://wa.me/919023265440?text=" +
+            encodeURIComponent(whatsappMessage);
+
+
+        window.open(whatsappURL, "_blank");
+
+        return false;
+
+    }
+
+
+    alert(
+        "Thank you, " +
+        name +
+        "! Your message has been received."
+    );
+
+    return false;
+
+}
+
+</script>
+
+</body>
+</html>

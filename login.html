@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Account — Crownfold</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        .account-page {
+            min-height: 75vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 90px 20px;
+            box-sizing: border-box;
+        }
+
+        .account-box {
+            width: 100%;
+            max-width: 460px;
+            padding: 45px;
+            background: #11110f;
+            border: 1px solid rgba(255,255,255,.07);
+            box-sizing: border-box;
+        }
+
+        .account-heading {
+            text-align: center;
+            margin-bottom: 38px;
+        }
+
+        .account-heading span {
+            color: #d4af37;
+            font-size: 8px;
+            font-weight: 600;
+            letter-spacing: 3px;
+        }
+
+        .account-heading h1 {
+            margin: 10px 0 0;
+            font-family: "Cormorant Garamond", Georgia, serif;
+            font-size: 52px;
+            line-height: .95;
+            font-weight: 500;
+            color: #eee9df;
+        }
+
+        .account-heading p {
+            margin: 15px 0 0;
+            color: #77736c;
+            font-size: 10px;
+            line-height: 1.7;
+        }
+
+        .account-form-group {
+            margin-bottom: 22px;
+        }
+
+        .account-form-group label {
+            display: block;
+            margin-bottom: 9px;
+            color: #aaa59d;
+            font-size: 8px;
+            font-weight: 600;
+            letter-spacing: 1.8px;
+        }
+
+        .account-form-group input {
+            width: 100%;
+            padding: 15px 0;
+            box-sizing: border-box;
+            border: none;
+            border-bottom: 1px solid #35332f;
+            outline: none;
+            background: transparent;
+            color: #eee9df;
+            font-family: inherit;
+            font-size: 11px;
+        }
+
+        .account-form-group input:focus {
+            border-bottom-color: #d4af37;
+        }
+
+        .account-form-group input::placeholder {
+            color: #55524d;
+        }
+
+        .account-button {
+            width: 100%;
+            margin-top: 8px;
+            padding: 18px;
+            border: 1px solid #d4af37;
+            background: #d4af37;
+            color: #080808;
+            font-size: 9px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            cursor: pointer;
+            transition: .3s ease;
+        }
+
+        .account-button:hover {
+            background: transparent;
+            color: #d4af37;
+        }
+
+        .account-links {
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+            margin-top: 25px;
+            padding-top: 22px;
+            border-top: 1px solid rgba(255,255,255,.07);
+        }
+
+        .account-links a {
+            color: #77736c;
+            text-decoration: none;
+            font-size: 8px;
+            letter-spacing: 1.2px;
+            transition: .25s ease;
+        }
+
+        .account-links a:hover {
+            color: #d4af37;
+        }
+
+        .account-status {
+            display: none;
+            margin-bottom: 25px;
+            padding: 15px;
+            border: 1px solid rgba(212,175,55,.3);
+            color: #d4af37;
+            font-size: 9px;
+            line-height: 1.6;
+            text-align: center;
+        }
+
+        @media (max-width: 600px) {
+
+            .account-page {
+                padding: 60px 15px;
+            }
+
+            .account-box {
+                padding: 30px 22px;
+            }
+
+            .account-heading h1 {
+                font-size: 45px;
+            }
+
+            .account-links {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- TOP BAR -->
+
+    <div class="top-bar">
+        <p>FREE SHIPPING ON ORDERS ABOVE ₹999</p>
+    </div>
+
+
+    <!-- HEADER -->
+
+    <header class="main-header">
+
+        <div class="header-left">
+            <button
+                class="menu-btn"
+                type="button"
+                aria-label="Open Menu">
+                ☰
+            </button>
+        </div>
+
+        <a href="index.html" class="logo">
+            <img src="../logo.png" alt="Crownfold Logo">
+        </a>
+
+        <nav class="main-nav">
+            <a href="index.html">HOME</a>
+            <a href="shop.html">NEW IN</a>
+            <a href="shop.html">SHIRTS</a>
+            <a href="shop.html">COLLECTION</a>
+        </nav>
+
+        <div class="header-actions">
+
+            <button
+                class="search-btn"
+                type="button">
+                SEARCH
+            </button>
+
+            <a href="login.html" class="account-btn">
+                ACCOUNT
+            </a>
+
+            <a href="cart.html" class="cart-btn">
+                CART <span id="cartCount">0</span>
+            </a>
+
+        </div>
+
+    </header>
+
+
+    <!-- ACCOUNT -->
+
+    <main class="account-page">
+
+        <section class="account-box">
+
+            <div class="account-heading">
+
+                <span>
+                    CROWNFOLD ACCOUNT
+                </span>
+
+                <h1>
+                    Welcome Back.
+                </h1>
+
+                <p>
+                    Sign in to access your Crownfold account
+                    and order history.
+                </p>
+
+            </div>
+
+
+            <div
+                class="account-status"
+                id="accountStatus">
+            </div>
+
+
+            <form id="loginForm">
+
+                <div class="account-form-group">
+
+                    <label for="loginEmail">
+                        EMAIL
+                    </label>
+
+                    <input
+                        type="email"
+                        id="loginEmail"
+                        placeholder="Enter your email"
+                        required>
+
+                </div>
+
+
+                <div class="account-form-group">
+
+                    <label for="loginPassword">
+                        PASSWORD
+                    </label>
+
+                    <input
+                        type="password"
+                        id="loginPassword"
+                        placeholder="Enter your password"
+                        required>
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="account-button">
+                    SIGN IN
+                </button>
+
+            </form>
+
+
+            <div class="account-links">
+
+                <a href="#" id="forgotPassword">
+                    FORGOT PASSWORD?
+                </a>
+
+                <a href="#" id="createAccount">
+                    CREATE ACCOUNT
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer class="site-footer">
+
+        <div class="footer-main">
+
+            <div class="footer-brand">
+
+                <h2>CROWNFOLD</h2>
+
+                <p>
+                    Modern menswear for everyday living.
+                </p>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <div>
+
+                    <h4>SHOP</h4>
+
+                    <a href="shop.html">NEW IN</a>
+                    <a href="shop.html">SHIRTS</a>
+                    <a href="shop.html">COLLECTION</a>
+
+                </div>
+
+
+                <div>
+
+                    <h4>COMPANY</h4>
+
+                    <a href="about.html">ABOUT</a>
+                    <a href="contact.html">CONTACT</a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <span>© 2026 CROWNFOLD</span>
+            <span>THE ESSENTIALS COLLECTION</span>
+
+        </div>
+
+    </footer>
+
+
+    <!-- MOBILE MENU -->
+
+    <div class="mobile-menu" id="mobileMenu">
+
+        <div class="mobile-menu-top">
+
+            <span>CROWNFOLD</span>
+
+            <button
+                class="mobile-menu-close"
+                id="mobileMenuClose"
+                type="button">
+                ×
+            </button>
+
+        </div>
+
+
+        <nav class="mobile-menu-links">
+
+            <a href="index.html">HOME</a>
+            <a href="shop.html">NEW IN</a>
+            <a href="shop.html">SHIRTS</a>
+            <a href="shop.html">COLLECTION</a>
+            <a href="about.html">ABOUT</a>
+            <a href="contact.html">CONTACT</a>
+
+            <a href="login.html">
+                ACCOUNT
+            </a>
+
+            <a href="cart.html">
+                CART
+                <span id="mobileCartCount">0</span>
+            </a>
+
+        </nav>
+
+    </div>
+
+
+    <script>
+
+        /* MOBILE MENU */
+
+        const menuBtn =
+            document.querySelector(".menu-btn");
+
+        const mobileMenu =
+            document.getElementById("mobileMenu");
+
+        const mobileMenuClose =
+            document.getElementById("mobileMenuClose");
+
+
+        if (menuBtn && mobileMenu) {
+
+            menuBtn.addEventListener("click", () => {
+                mobileMenu.classList.add("active");
+            });
+
+        }
+
+
+        if (mobileMenuClose && mobileMenu) {
+
+            mobileMenuClose.addEventListener("click", () => {
+                mobileMenu.classList.remove("active");
+            });
+
+        }
+
+
+        document
+            .querySelectorAll(".mobile-menu-links a")
+            .forEach(link => {
+
+                link.addEventListener("click", () => {
+                    mobileMenu.classList.remove("active");
+                });
+
+            });
+
+
+        /* CART COUNT */
+
+        function updateCartCount() {
+
+            const cart =
+                JSON.parse(
+                    localStorage.getItem("crownfoldCart")
+                ) || [];
+
+
+            const totalQuantity =
+                cart.reduce(
+                    (total, item) =>
+                        total + Number(item.quantity || 0),
+                    0
+                );
+
+
+            const cartCount =
+                document.getElementById("cartCount");
+
+            const mobileCartCount =
+                document.getElementById("mobileCartCount");
+
+
+            if (cartCount) {
+                cartCount.textContent =
+                    totalQuantity;
+            }
+
+            if (mobileCartCount) {
+                mobileCartCount.textContent =
+                    totalQuantity;
+            }
+
+        }
+
+
+        updateCartCount();
+
+
+        /* DEMO LOGIN */
+
+        const loginForm =
+            document.getElementById("loginForm");
+
+        const accountStatus =
+            document.getElementById("accountStatus");
+
+
+        if (loginForm) {
+
+            loginForm.addEventListener(
+                "submit",
+                function(event) {
+
+                    event.preventDefault();
+
+
+                    const email =
+                        document
+                            .getElementById("loginEmail")
+                            .value
+                            .trim();
+
+                    const password =
+                        document
+                            .getElementById("loginPassword")
+                            .value;
+
+
+                    if (!email || !password) {
+                        return;
+                    }
+
+
+                    localStorage.setItem(
+                        "crownfoldUser",
+                        JSON.stringify({
+                            email: email
+                        })
+                    );
+
+
+                    accountStatus.textContent =
+                        "Signed in successfully. Welcome to Crownfold.";
+
+                    accountStatus.style.display =
+                        "block";
+
+
+                    setTimeout(() => {
+
+                        window.location.href =
+                            "orders.html";
+
+                    }, 1000);
+
+                }
+            );
+
+        }
+
+
+        /* CREATE ACCOUNT */
+
+        const createAccount =
+            document.getElementById("createAccount");
+
+
+        if (createAccount) {
+
+            createAccount.addEventListener(
+                "click",
+                function(event) {
+
+                    event.preventDefault();
+
+                    alert(
+                        "Account registration will be added in the next step."
+                    );
+
+                }
+            );
+
+        }
+
+
+        /* FORGOT PASSWORD */
+
+        const forgotPassword =
+            document.getElementById("forgotPassword");
+
+
+        if (forgotPassword) {
+
+            forgotPassword.addEventListener(
+                "click",
+                function(event) {
+
+                    event.preventDefault();
+
+                    alert(
+                        "Password recovery will be connected later."
+                    );
+
+                }
+            );
+
+        }
+
+    </script>
+
+</body>
+</html>

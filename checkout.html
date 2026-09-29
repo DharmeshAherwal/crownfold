@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Checkout | Crownfold</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+
+    <div class="top-bar">
+    <p>FREE SHIPPING ON ORDERS ABOVE ₹999</p>
+</div>
+
+<header class="main-header">
+
+    <div class="header-left">
+        <button class="menu-btn" type="button">☰</button>
+    </div>
+
+    <a href="index.html" class="logo">
+        <img src="../logo.png" alt="Crownfold Logo">
+    </a>
+
+    <nav class="main-nav">
+        <a href="index.html">HOME</a>
+        <a href="shop.html">NEW IN</a>
+        <a href="shop.html">SHIRTS</a>
+        <a href="shop.html">COLLECTION</a>
+    </nav>
+
+    <div class="header-actions">
+        <button class="search-btn" type="button">SEARCH</button>
+        <a href="login.html" class="account-btn">
+ACCOUNT</a>
+        <a href="cart.html" class="cart-btn">
+            CART <span id="cartCount">0</span>
+        </a>
+    </div>
+
+</header>
+
+
+    <!-- CHECKOUT -->
+
+    <main class="checkout-page">
+
+        <div class="checkout-heading">
+
+            <p class="small-title">
+                CROWNFOLD
+            </p>
+
+            <h1>Checkout</h1>
+
+        </div>
+
+
+        <div class="checkout-layout">
+
+
+            <!-- CUSTOMER INFORMATION -->
+
+            <section class="checkout-form">
+
+                <h2>Customer Information</h2>
+
+                <div class="form-group">
+
+                    <label for="fullName">
+                        Full Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="fullName"
+                        placeholder="Enter your full name"
+                    >
+
+                </div>
+
+
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label for="phone">
+                            Phone Number
+                        </label>
+
+                        <input
+                            type="tel"
+                            id="phone"
+                            placeholder="Enter phone number"
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="email">
+                            Email Address
+                        </label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            placeholder="Enter email address"
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <h2 class="address-heading">
+                    Shipping Address
+                </h2>
+
+
+                <div class="form-group">
+
+                    <label for="address">
+                        Address
+                    </label>
+
+                    <textarea
+                        id="address"
+                        rows="4"
+                        placeholder="House / Flat / Street / Area"
+                    ></textarea>
+
+                </div>
+
+
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label for="city">
+                            City
+                        </label>
+
+                        <input
+                            type="text"
+                            id="city"
+                            placeholder="City"
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="pincode">
+                            Pincode
+                        </label>
+
+                        <input
+                            type="text"
+                            id="pincode"
+                            placeholder="Pincode"
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="state">
+                        State
+                    </label>
+
+                    <input
+                        type="text"
+                        id="state"
+                        placeholder="State"
+                    >
+
+                </div>
+
+
+                <h2 class="payment-heading">
+                    Payment Method
+                </h2>
+
+
+                <div class="payment-option">
+
+                    <label>
+
+                        <input
+                            type="radio"
+                            name="payment"
+                            value="cod"
+                            checked
+                        >
+
+                        <span>
+                            Cash on Delivery
+                        </span>
+
+                    </label>
+
+                </div>
+
+
+                <button
+                    id="placeOrderBtn"
+                    class="add-cart-btn"
+                    type="button"
+                >
+                    PLACE ORDER
+                </button>
+
+            </section>
+
+
+
+            <!-- ORDER SUMMARY -->
+
+            <aside class="checkout-summary">
+
+                <h2>Order Summary</h2>
+
+                <div id="checkoutItems">
+
+                    <!-- Products will load here -->
+
+                </div>
+
+
+                <div class="checkout-total">
+
+                    <span>
+                        Total
+                    </span>
+
+                    <strong id="checkoutTotal">
+                        ₹0
+                    </strong>
+
+                </div>
+
+            </aside>
+
+        </div>
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>
+            © 2026 CROWNFOLD. ALL RIGHTS RESERVED.
+        </p>
+
+    </footer>
+
+
+    <script src="js/checkout.js"></script>
+
+</body>
+
+</html>
